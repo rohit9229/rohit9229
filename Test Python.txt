@@ -1,0 +1,27 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.chrome.options import Options
+options = Options()
+options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=options)
+driver.get("https://suat.sendan.com.sa/user/login/")
+username = driver.find_element(By.ID, 'username')
+username.send_keys('111064')
+password = driver.find_element(By.ID, 'pswd')
+password.send_keys('Hello@123')
+driver.find_element(By.ID, 'sign_in').click()
+driver.maximize_window()
+# company = driver.find_element(By.CLASS_NAME,"company_name").click()git
+time.sleep(5)
+driver.find_element(By.XPATH, "//div[@class='col-xs-12 col-sm-12 col-md-12']/div[@class='navigation--app--area animate__animated']//*[@class='navigation--area']//*[contains(text(),'ADMIN')]").click()
+
+time.sleep(5)
+# driver.find_element(By.XPATH,"//div[contains(text(), 'MAWAD SENDAN TRADING EST')]").click()
+# driver.find_element(By.ID, 'sign_in').click()
+# time.sleep(4)
+# rohit=driver.find_element(By.CLASS_NAME, 'cls_grp').click()
