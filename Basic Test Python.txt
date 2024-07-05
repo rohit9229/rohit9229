@@ -1,0 +1,15 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+options = Options()
+options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=options)
+driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+time.sleep(2)
+driver.maximize_window()
+radio_button_example = driver.find_element(By.CSS_SELECTOR, "input[value='radio1']").click()
+time.sleep((2))
+radio_button_example = driver.find_element(By.CSS_SELECTOR, "input.radioButton[value='radio2']").click()
+time.sleep(2)
+radio_button_example = driver.find_element(By.LINK_TEXT, "Free Access to InterviewQues/ResumeAssistance/Material").click()
